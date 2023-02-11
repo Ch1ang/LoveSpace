@@ -13,7 +13,7 @@
     <description>若依微服务系统</description>
 
     <properties>
-        <ruoyi.version>3.6.2</ruoyi.version>
+        <ruoyi.version>3.6.0</ruoyi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -27,7 +27,7 @@
         <swagger.fox.version>3.0.0</swagger.fox.version>
         <swagger.core.version>1.6.2</swagger.core.version>
         <tobato.version>1.27.2</tobato.version>
-        <kaptcha.version>2.3.3</kaptcha.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
         <pagehelper.boot.version>1.4.6</pagehelper.boot.version>
         <druid.version>1.2.15</druid.version>
         <dynamic-ds.version>3.5.2</dynamic-ds.version>
