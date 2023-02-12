@@ -36,12 +36,12 @@ modules(){
 
 # 关闭所有环境/模块
 stop(){
-	docker-compose stop
+	docker-compose stop ruoyi-nginx ruoyi-gateway ruoyi-auth ruoyi-modules-system
 }
 
 # 删除所有环境/模块
 rm(){
-	docker-compose rm
+	docker-compose rm ruoyi-nginx ruoyi-gateway ruoyi-auth ruoyi-modules-system
 }
 
 # 根据输入参数，选择执行对应方法，不输入则执行使用说明
