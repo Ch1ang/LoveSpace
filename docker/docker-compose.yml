@@ -83,8 +83,6 @@ services:
       dockerfile: dockerfile
     ports:
       - "9200:9200"
-    environment:
-      - "SPRING_PROFILES_ACTIVE=uat"
     depends_on:
       - ruoyi-redis
     links:
