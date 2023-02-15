@@ -3,21 +3,22 @@ server:
   port: 9200
 
 # Spring
-spring: 
+spring:
   application:
     # 应用名称
     name: ruoyi-auth
   profiles:
     # 环境配置
-    active: @spring.profile@
+    active: ${LoveSpace_profiles_active}
   cloud:
+    # ruoyi-auth-uat.yml
     nacos:
       discovery:
         # 服务注册地址
-        server-addr: @nacos.server.address@
+        server-addr: ${LoveSpace_uat_nacos_server}
       config:
         # 配置中心地址
-        server-addr: @nacos.server.address@
+        server-addr: ${LoveSpace_uat_nacos_server}
         # 配置文件格式
         file-extension: yml
         # 共享配置
