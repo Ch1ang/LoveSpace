@@ -1,5 +1,8 @@
 #!/bin/sh
 
+PROJECT_HOME=$0
+DOCKER_HOME=$PROJECT_HOME/docker
+
 # 复制项目的文件到对应docker路径，便于一键生成镜像。
 usage() {
 	echo "Usage: sh copy.sh"
@@ -9,33 +12,33 @@ usage() {
 
 # copy sql
 #echo "begin copy sql "
-#cp ../sql/ry_20220814.sql ./mysql/db
-#cp ../sql/ry_config_20220510.sql ./mysql/db
+#cp $PROJECT_HOME/sql/ry_20220814.sql $DOCKER_HOME/mysql/db
+#cp $PROJECT_HOME/sql/ry_config_20220510.sql $DOCKER_HOME/mysql/db
 
 # copy html
 echo "begin copy html "
-cp -r ../ruoyi-ui/dist/** ./nginx/html/dist
+cp -r $PROJECT_HOME/ruoyi-ui/dist/** $DOCKER_HOME/nginx/html/dist
 
 
 # copy jar
 echo "begin copy ruoyi-gateway "
-cp ../ruoyi-gateway/target/ruoyi-gateway.jar ./ruoyi/gateway/jar
+cp $PROJECT_HOME/ruoyi-gateway/target/ruoyi-gateway.jar $DOCKER_HOME/ruoyi/gateway/jar
 
 echo "begin copy ruoyi-auth "
-cp ../ruoyi-auth/target/ruoyi-auth.jar ./ruoyi/auth/jar
+cp $PROJECT_HOME/ruoyi-auth/target/ruoyi-auth.jar $DOCKER_HOME/ruoyi/auth/jar
 
 echo "begin copy ruoyi-visual "
-cp ../ruoyi-visual/ruoyi-monitor/target/ruoyi-visual-monitor.jar  ./ruoyi/visual/monitor/jar
+cp $PROJECT_HOME/ruoyi-visual/ruoyi-monitor/target/ruoyi-visual-monitor.jar  $DOCKER_HOME/ruoyi/visual/monitor/jar
 
 echo "begin copy ruoyi-modules-system "
-cp ../ruoyi-modules/ruoyi-system/target/ruoyi-modules-system.jar ./ruoyi/modules/system/jar
+cp $PROJECT_HOME/ruoyi-modules/ruoyi-system/target/ruoyi-modules-system.jar $DOCKER_HOME/ruoyi/modules/system/jar
 
 echo "begin copy ruoyi-modules-file "
-cp ../ruoyi-modules/ruoyi-file/target/ruoyi-modules-file.jar ./ruoyi/modules/file/jar
+cp $PROJECT_HOME/ruoyi-modules/ruoyi-file/target/ruoyi-modules-file.jar $DOCKER_HOME/ruoyi/modules/file/jar
 
 echo "begin copy ruoyi-modules-job "
-cp ../ruoyi-modules/ruoyi-job/target/ruoyi-modules-job.jar ./ruoyi/modules/job/jar
+cp $PROJECT_HOME/ruoyi-modules/ruoyi-job/target/ruoyi-modules-job.jar $DOCKER_HOME/ruoyi/modules/job/jar
 
 echo "begin copy ruoyi-modules-gen "
-cp ../ruoyi-modules/ruoyi-gen/target/ruoyi-modules-gen.jar ./ruoyi/modules/gen/jar
+cp $PROJECT_HOME/ruoyi-modules/ruoyi-gen/target/ruoyi-modules-gen.jar $DOCKER_HOME/ruoyi/modules/gen/jar
 
