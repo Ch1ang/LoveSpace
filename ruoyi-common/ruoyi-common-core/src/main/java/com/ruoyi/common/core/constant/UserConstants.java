@@ -21,6 +21,9 @@ public class UserConstants
     /** 用户封禁状态 */
     public static final String USER_DISABLE = "1";
 
+    /** 角色正常状态 */
+    public static final String ROLE_NORMAL = "0";
+
     /** 角色封禁状态 */
     public static final String ROLE_DISABLE = "1";
 
@@ -60,10 +63,9 @@ public class UserConstants
     /** InnerLink组件标识 */
     public final static String INNER_LINK = "InnerLink";
 
-    /** 校验返回结果码 */
-    public final static String UNIQUE = "0";
-
-    public final static String NOT_UNIQUE = "1";
+    /** 校验是否唯一的返回标识 */
+    public final static boolean UNIQUE = true;
+    public final static boolean NOT_UNIQUE = false;
 
     /**
      * 用户名长度限制
@@ -78,4 +80,9 @@ public class UserConstants
     public static final int PASSWORD_MIN_LENGTH = 5;
 
     public static final int PASSWORD_MAX_LENGTH = 20;
+
+    public static boolean isAdmin(Long userId)
+    {
+        return userId != null && 1L == userId;
+    }
 }

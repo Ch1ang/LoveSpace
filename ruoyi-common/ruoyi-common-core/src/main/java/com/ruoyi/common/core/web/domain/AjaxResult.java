@@ -103,9 +103,32 @@ public class AjaxResult extends HashMap<String, Object>
     }
 
     /**
+     * 返回警告消息
+     *
+     * @param msg 返回内容
+     * @return 警告消息
+     */
+    public static AjaxResult warn(String msg)
+    {
+        return AjaxResult.warn(msg, null);
+    }
+
+    /**
+     * 返回警告消息
+     *
+     * @param msg 返回内容
+     * @param data 数据对象
+     * @return 警告消息
+     */
+    public static AjaxResult warn(String msg, Object data)
+    {
+        return new AjaxResult(HttpStatus.WARN, msg, data);
+    }
+
+    /**
      * 返回错误消息
      * 
-     * @return
+     * @return 错误消息
      */
     public static AjaxResult error()
     {
@@ -116,7 +139,7 @@ public class AjaxResult extends HashMap<String, Object>
      * 返回错误消息
      * 
      * @param msg 返回内容
-     * @return 警告消息
+     * @return 错误消息
      */
     public static AjaxResult error(String msg)
     {
@@ -128,7 +151,7 @@ public class AjaxResult extends HashMap<String, Object>
      * 
      * @param msg 返回内容
      * @param data 数据对象
-     * @return 警告消息
+     * @return 错误消息
      */
     public static AjaxResult error(String msg, Object data)
     {
@@ -140,7 +163,7 @@ public class AjaxResult extends HashMap<String, Object>
      * 
      * @param code 状态码
      * @param msg 返回内容
-     * @return 警告消息
+     * @return 错误消息
      */
     public static AjaxResult error(int code, String msg)
     {
@@ -154,7 +177,17 @@ public class AjaxResult extends HashMap<String, Object>
      */
     public boolean isSuccess()
     {
-        return !isError();
+        return Objects.equals(HttpStatus.SUCCESS, this.get(CODE_TAG));
+    }
+
+    /**
+     * 是否为警告消息
+     *
+     * @return 结果
+     */
+    public boolean isWarn()
+    {
+        return Objects.equals(HttpStatus.WARN, this.get(CODE_TAG));
     }
 
     /**
@@ -164,7 +197,7 @@ public class AjaxResult extends HashMap<String, Object>
      */
     public boolean isError()
     {
-        return Objects.equals(HttpStatus.SUCCESS, this.get(CODE_TAG));
+        return Objects.equals(HttpStatus.ERROR, this.get(CODE_TAG));
     }
 
     /**

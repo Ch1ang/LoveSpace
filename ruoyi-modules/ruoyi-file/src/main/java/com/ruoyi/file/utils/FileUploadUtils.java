@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 import java.util.Objects;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.multipart.MultipartFile;
+import com.ruoyi.common.core.exception.file.FileException;
 import com.ruoyi.common.core.exception.file.FileNameLengthLimitExceededException;
 import com.ruoyi.common.core.exception.file.FileSizeLimitExceededException;
 import com.ruoyi.common.core.exception.file.InvalidExtensionException;
@@ -25,7 +26,7 @@ public class FileUploadUtils
     /**
      * 默认大小 50M
      */
-    public static final long DEFAULT_MAX_SIZE = 50 * 1024 * 1024;
+    public static final long DEFAULT_MAX_SIZE = 50 * 1024 * 1024L;
 
     /**
      * 默认的文件名最大长度 100
@@ -45,6 +46,10 @@ public class FileUploadUtils
         try
         {
             return upload(baseDir, file, MimeTypeUtils.DEFAULT_ALLOWED_EXTENSION);
+        }
+        catch (FileException fe)
+        {
+            throw new IOException(fe.getDefaultMessage(), fe);
         }
         catch (Exception e)
         {

@@ -1,43 +1,6 @@
 <template>
   <div class="app-container home">
     <el-row :gutter="20">
-      <el-col :sm="24" :lg="24">
-        <blockquote class="text-warning" style="font-size: 14px">
-          领取阿里云通用云产品1888优惠券
-          <br />
-          <el-link
-            href="https://www.aliyun.com/minisite/goods?userCode=brki8iof"
-            type="primary"
-            target="_blank"
-            >https://www.aliyun.com/minisite/goods?userCode=brki8iof</el-link
-          >
-          <br />
-          领取腾讯云通用云产品2860优惠券
-          <br />
-          <el-link
-            href="https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=198c8df2ed259157187173bc7f4f32fd&from=console"
-            type="primary"
-            target="_blank"
-            >https://cloud.tencent.com/redirect.php?redirect=1025&cps_key=198c8df2ed259157187173bc7f4f32fd&from=console</el-link
-          >
-          <br />
-          阿里云服务器折扣区
-          <el-link href="http://aly.ruoyi.vip" type="primary" target="_blank"
-            >>☛☛点我进入☚☚</el-link
-          >
-          &nbsp;&nbsp;&nbsp; 腾讯云服务器秒杀区
-          <el-link href="http://txy.ruoyi.vip" type="primary" target="_blank"
-            >>☛☛点我进入☚☚</el-link
-          ><br />
-          <h4 class="text-danger">
-            云产品通用红包，可叠加官网常规优惠使用。(仅限新用户)
-          </h4>
-        </blockquote>
-
-        <hr />
-      </el-col>
-    </el-row>
-    <el-row :gutter="20">
       <el-col :sm="24" :lg="12" style="padding-left: 20px">
         <h2>若依后台管理框架</h2>
         <p>
@@ -118,11 +81,10 @@
               >
             </p>
             <p>
-              <i class="el-icon-user-solid"></i> QQ群：<s>满42799195</s> <s>满170157040</s>
-              <s>满130643120</s> <s>满225920371</s> <s>满201705537</s> <s>满236543183</s>
-              <s>满213618602</s> <a href="https://jq.qq.com/?_wv=1027&k=kiU5WDls" target="_blank">
-                148794840</a
-              >
+              <i class="el-icon-user-solid"></i> QQ群： <s> 满42799195 </s>  <s> 满170157040 </s>
+              <s> 满130643120 </s> <s> 满225920371 </s> <s> 满201705537 </s> <s> 满236543183 </s>
+              <s> 满213618602 </s> <s> 满148794840 </s> <s> 满118752664 </s> <s> 满101038945 </s>
+              <s> 满128355254 </s> <s> 满179219821 </s> <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=Z6j1amUmIPBXamuZzxpwjY8GwaP45XB6&authKey=zfSnxECfnScfY1HLCWilSqCq%2BmSVtr%2Bi%2F4oXeBcuQVwlq6XlrAfbZ0awp3%2B4Bdec&noverify=0&group_code=158753145" target="_blank">158753145</a>
             </p>
             <p>
               <i class="el-icon-chat-dot-round"></i> 微信：<a
@@ -146,6 +108,205 @@
             <span>更新日志</span>
           </div>
           <el-collapse accordion>
+            <el-collapse-item title="v3.6.5 - 2024-11-13">
+              <ol>
+                <li>使用SpringDoc代替Swagger</li>
+                <li>菜单管理新增路由名称</li>
+                <li>新增数据脱敏过滤注解</li>
+                <li>限制用户操作数据权限范围</li>
+                <li>支持自定义显示Excel属性列</li>
+                <li>操作日志记录DELETE请求参数</li>
+                <li>用户登录后记录最后登录IP&时间</li>
+                <li>升级druid到最新版本1.2.23</li>
+                <li>升级fastjson到最新版2.0.53</li>
+                <li>升级dynamic-ds到最新版本4.3.1</li>
+                <li>升级spring-cloud到最新版2021.0.9</li>
+                <li>升级spring-boot-admin到最新版2.7.16</li>
+                <li>升级spring-cloud-alibaba到最新版2021.0.6.1</li>
+                <li>升级quill到最新版本2.0.2</li>
+                <li>升级axios到最新版本0.28.1</li>
+                <li>升级core-js到最新版本3.37.1</li>
+                <li>升级其他依赖到安全版本，防止漏洞风险</li>
+                <li>修复角色禁用权限不失效问题</li>
+                <li>优化身份证脱敏正则</li>
+                <li>优化权限更新后同步缓存</li>
+                <li>优化查询时间范围日期格式</li>
+                <li>优化代码生成上级菜单字段类型</li>
+                <li>优化无用户编号不校验数据权限</li>
+                <li>优化代码生成主子表关联查询方式</li>
+                <li>优化校检文件名是否包含特殊字符</li>
+                <li>优化查表特殊字符使用反斜杠进行转义</li>
+                <li>优化多个自定数据权限使用in查询,避免多次拼接</li>
+                <li>其他细节优化</li>
+              </ol>
+            </el-collapse-item>
+            <el-collapse-item title="v3.6.4 - 2024-04-01">
+              <ol>
+                <li>全局数据存储用户编号</li>
+                <li>用户密码新增非法字符验证</li>
+                <li>代码生成支持选择前端模板类型</li>
+                <li>操作日志列表新增IP地址查询</li>
+                <li>显隐列组件支持复选框弹出类型</li>
+                <li>Excel注解ColumnType类型新增文本</li>
+                <li>Excel自定义数据处理器增加单元格/工作簿对象</li>
+                <li>升级element-ui到最新版本2.15.14</li>
+                <li>升级compression-webpack-plugin到6.1.2以兼容node18+</li>
+                <li>升级druid到最新版本1.2.20</li>
+                <li>升级fastjson到最新版2.0.43</li>
+                <li>升级pagehelper到最新版2.0.0</li>
+                <li>升级dynamic-ds到最新版本4.2.0</li>
+                <li>升级commons.io到最新版本2.13.0</li>
+                <li>升级spring-boot到最新版本2.7.18</li>
+                <li>升级spring-boot-admin到最新版2.7.15</li>
+                <li>升级transmittable-thread-local到最新版本2.14.4</li>
+                <li>修复五级路由缓存无效问题</li>
+                <li>修复外链带端口出现的异常</li>
+                <li>修复内链iframe没有传递参数问题</li>
+                <li>修复自定义字典样式不生效的问题</li>
+                <li>修复字典缓存删除方法参数错误问题</li>
+                <li>修复Excel导入数据临时文件无法删除问题</li>
+                <li>修复未登录带参数访问成功后参数丢失问题</li>
+                <li>修复HeaderSearch组件跳转query参数丢失问题</li>
+                <li>修复数据字典列表页重置后标签值无法输入问题</li>
+                <li>修复Excels导入时无法获取到readConverterExp内容转表达式问题</li>
+                <li>优化Xss注解匹配方式</li>
+                <li>优化权限字符匹配方式</li>
+                <li>优化下载zip方法新增遮罩层</li>
+                <li>优化头像上传参数新增文件名称</li>
+                <li>优化字典标签支持自定义分隔符</li>
+                <li>优化定时任务白名单配置范围缩小</li>
+                <li>优化菜单管理类型为按钮状态可选</li>
+                <li>优化前端防重复提交数据大小限制</li>
+                <li>优化TopNav菜单没有图标svg不显示</li>
+                <li>优化富文本Editor组件检验图片格式</li>
+                <li>优化数字金额大写转换精度丢失问题</li>
+                <li>优化个人中心/基本资料修改时数据显示问题</li>
+                <li>其他细节优化</li>
+              </ol>
+            </el-collapse-item>
+            <el-collapse-item title="v3.6.3 - 2023-07-07">
+              <ol>
+                <li>支持登录IP黑名单限制</li>
+                <li>操作日志新增消耗时间属性</li>
+                <li>屏蔽定时任务bean违规的字符</li>
+                <li>日志管理使用索引提升查询性能</li>
+                <li>日志注解支持排除指定的请求参数</li>
+                <li>支持自定义隐藏属性列过滤子对象</li>
+                <li>升级spring-boot到最新版本2.7.13</li>
+                <li>升级spring-cloud到最新版2021.0.8</li>
+                <li>升级spring-cloud-alibaba到最新版2021.0.5.0</li>
+                <li>升级druid到最新版本1.2.16</li>
+                <li>升级fastjson到最新版2.0.34</li>
+                <li>升级pagehelper到最新版1.4.7</li>
+                <li>升级transmittable-thread-local到最新版本2.14.3</li>
+                <li>升级element-ui到最新版本2.15.13</li>
+                <li>移除apache/commons-fileupload依赖</li>
+                <li>修复页面切换时布局错乱的问题</li>
+                <li>修复用户多角色数据权限可能出现权限抬升的情况</li>
+                <li>修复导入用户时无法更新存在用户数据的问题</li>
+                <li>修复开启TopNav后一级菜单路由参数设置无效问题</li>
+                <li>优化文件下载出现的异常</li>
+                <li>优化选择图标组件高亮回显</li>
+                <li>优化修改密码日志存储明文问题</li>
+                <li>优化排序属性orderBy参数限制长度</li>
+                <li>优化页签栏关闭其他出现的异常问题</li>
+                <li>优化页签关闭左侧选项排除首页选项</li>
+                <li>优化关闭当前tab页跳转最右侧tab页</li>
+                <li>优化文件上传服务关闭InputStream</li>
+                <li>优化页签在Firefox浏览器被遮挡的问题</li>
+                <li>优化侧边栏的平台标题与VUE_APP_TITLE保持同步</li>
+                <li>优化DictTag组件value没有匹配的值时则展示value</li>
+                <li>优化去除@EnableCustomSwagger注解后会启动失败问题</li>
+                <li>优化upload接口在文件过大和文件名过长的情况返回提示信息</li>
+                <li>优化异步保存日志发生报错不进RemoteLogFallbackFactory问题</li>
+                <li>其他细节优化</li>
+              </ol>
+            </el-collapse-item>
+            <el-collapse-item title="v3.6.2 - 2023-01-16">
+              <ol>
+                <li>重置时取消部门选中</li>
+                <li>新增返回警告消息提示</li>
+                <li>忽略不必要的属性数据返回</li>
+                <li>修改参数键名时移除前缓存配置</li>
+                <li>开启TopNav没有子菜单隐藏侧边栏</li>
+                <li>删除fuse无效选项maxPatternLength</li>
+                <li>兼容Excel下拉框内容过多无法显示的问题</li>
+                <li>修复文件上传组件格式验证问题</li>
+                <li>修复回显数据字典数组异常问题</li>
+                <li>修复sheet超出最大行数异常问题</li>
+                <li>修复Log注解GET请求记录不到参数问题</li>
+                <li>修复gateway流控规则生效但不显示问题</li>
+                <li>修复主题颜色在Drawer组件不会加载问题</li>
+                <li>修复调度日志点击多次数据不变化的问题</li>
+                <li>修复用户编辑时角色和部门存在无法修改情况</li>
+                <li>修复使用透明底png图片时，自动填充黑色背景</li>
+                <li>修复table中更多按钮切换主题色未生效修复问题</li>
+                <li>修复某些特性的环境生成代码变乱码TXT文件问题</li>
+                <li>修复代码生成图片/文件/单选时选择必填无法校验问题</li>
+                <li>升级spring-cloud到最新版2021.0.5</li>
+                <li>升级spring-boot到最新版本2.7.7</li>
+                <li>升级spring-boot-admin到最新版2.7.10</li>
+                <li>升级kaptcha到最新版2.3.3</li>
+                <li>升级druid到最新版本1.2.15</li>
+                <li>升级fastjson到最新版2.0.22</li>
+                <li>升级pagehelper到最新版1.4.6</li>
+                <li>升级transmittable-thread-local到最新版本2.14.2</li>
+                <li>升级echarts到最新版本5.4.0</li>
+                <li>升级core-js到最新版本3.25.3</li>
+                <li>升级element-ui到最新版本2.15.12</li>
+                <li>移除commons-collections多余的依赖</li>
+                <li>优化弹窗内容过多展示不全问题</li>
+                <li>优化导出对象的子列表为空会出现[]问题</li>
+                <li>优化字符未使用下划线不进行驼峰式处理</li>
+                <li>优化nacos修改xss开关时同步过滤器验证</li>
+                <li>优化修改头像在小屏幕上页面布局错位的问题</li>
+                <li>其他细节优化</li>
+              </ol>
+            </el-collapse-item>
+            <el-collapse-item title="v3.6.1 - 2022-10-01">
+              <ol>
+                <li>数据逻辑删除不进行唯一验证</li>
+                <li>支持多权限字符匹配角色数据权限</li>
+                <li>页面内嵌iframe切换tab不刷新数据</li>
+                <li>新增密码最大错误次数/锁定时间</li>
+                <li>登录日志新增解锁账户功能</li>
+                <li>通用下载方法新增config配置选项</li>
+                <li>操作日志记录支持排除敏感属性字段</li>
+                <li>Excel注解支持导出对象的子列表方法</li>
+                <li>Excel注解支持自定义隐藏属性列</li>
+                <li>Excel注解支持backgroundColor属性设置背景色</li>
+                <li>升级spring-cloud-alibaba到最新版2021.0.4.0</li>
+                <li>升级spring-cloud到最新版2021.0.4</li>
+                <li>升级spring-boot到最新版本2.7.3</li>
+                <li>升级spring-boot-admin到最新版2.7.5</li>
+                <li>升级seata到最新版1.5.2</li>
+                <li>升级druid到最新版本1.2.12</li>
+                <li>升级fastjson到最新版2.0.14</li>
+                <li>升级pagehelper到最新版1.4.5</li>
+                <li>升级core-js到最新版本3.25.2</li>
+                <li>升级dynamic-ds到最新版本3.5.2</li>
+                <li>升级element-ui到最新版本2.15.10</li>
+                <li>修复多文件上传报错出现的异常问题</li>
+                <li>修复图片预览组件src属性为null值控制台报错问题</li>
+                <li>修复使用FastDFS上传头像失败提示文件名没有后缀问题</li>
+                <li>优化seata单独依赖模块</li>
+                <li>优化任务过期不执行调度</li>
+                <li>优化字典数据使用store存取</li>
+                <li>优化代码生成同步后值NULL问题</li>
+                <li>优化定时任务支持执行父类方法</li>
+                <li>优化修改资料头像被覆盖的问题</li>
+                <li>优化修改用户登录账号重复验证</li>
+                <li>优化用户个人信息接口防止修改部门</li>
+                <li>优化布局设置使用el-drawer抽屉显示</li>
+                <li>优化日志注解记录限制请求地址的长度</li>
+                <li>优化导入更新用户数据前校验数据权限</li>
+                <li>优化excel/scale属性导出单元格数值类型</li>
+                <li>优化日志操作中重置按钮时重复查询的问题</li>
+                <li>优化多个相同角色数据导致权限SQL重复问题</li>
+                <li>优化表格上右侧工具条（搜索按钮显隐&右侧样式凸出）</li>
+                <li>其他细节优化</li>
+              </ol>
+            </el-collapse-item>
             <el-collapse-item title="v3.6.0 - 2022-07-16">
               <ol>
                 <li>Excel注解支持color字体颜色</li>
@@ -235,7 +396,7 @@
                 <li>代码生成新增Java类型Boolean</li>
                 <li>定时任务目标字符串过滤特殊字符</li>
                 <li>定时任务目标字符串验证包名白名单</li>
-				<li>升级nacos到最新版2.0.4</li>
+                <li>升级nacos到最新版2.0.4</li>
                 <li>升级spring-cloud到最新版2021.0.0</li>
                 <li>升级spring-boot到最新版本2.6.3</li>
                 <li>升级spring-boot-admin到最新版2.6.1</li>
@@ -265,17 +426,17 @@
                 <li>新增tab对象简化页签操作</li>
                 <li>修改获取缓存信息方式</li>
                 <li>修改权限认证注解实现</li>
-				<li>自定义文字复制剪贴指令</li>
+                <li>自定义文字复制剪贴指令</li>
                 <li>升级axios到最新版本0.24.0</li>
                 <li>升级core-js到最新版本3.19.1</li>
                 <li>升级jsencrypt到最新版本3.2.1</li>
                 <li>升级js-cookie到最新版本3.0.1</li>
-				<li>升级clipboard到最新版本2.0.8</li>
+                <li>升级clipboard到最新版本2.0.8</li>
                 <li>升级velocity到最新版本2.3</li>
                 <li>升级spring-boot到最新版本2.5.6</li>
                 <li>升级spring-boot-admin到最新版2.5.4</li>
                 <li>升级dynamic-ds到最新版本3.5.0</li>
-				<li>代码生成预览支持复制内容</li>
+                <li>代码生成预览支持复制内容</li>
                 <li>修复五级以上菜单出现的404问题</li>
                 <li>生产环境使用路由懒加载提升页面响应速度</li>
                 <li>任务屏蔽违规字符&参数忽略双引号中的逗号</li>
@@ -600,9 +761,7 @@
                 <li>网关白名单放入nacos配置&支持模糊匹配</li>
                 <li>修复富文本工具栏样式不对齐问题</li>
                 <li>Editor组件优化，支持自定义高度&图片冲突问题</li>
-                <li>
-                  修复富文本空格和缩进保存后不生效问题&删除重复的placeholder
-                </li>
+                <li>修复富文本空格和缩进保存后不生效问题&删除重复的placeholder</li>
                 <li>限制系统内置参数不允许删除</li>
                 <li>修正调用目标字符串最大长度</li>
                 <li>修改自定义权限实现</li>
@@ -656,9 +815,7 @@
                 <li>代码生成浮点型改用BigDecimal</li>
                 <li>表单类型为Integer/Long设置整形默认值</li>
                 <li>修改用户管理复选框宽度，防止部分浏览器出现省略号</li>
-                <li>
-                  RedisCache中所有方法参数添加final，并优化list取出效率，添加其它常用redis方法
-                </li>
+                <li>RedisCache中所有方法参数添加final，并优化list取出效率，添加其它常用redis方法</li>
                 <li>修正定时任务日志权限字符</li>
                 <li>添加Jackson时区配置</li>
                 <li>代码生成相关问题修复</li>
@@ -712,9 +869,7 @@
                 <li>支持一级菜单（和主页同级）在main区域显示</li>
                 <li>限制外链地址必须以http(s)😕/开头</li>
                 <li>tagview & sidebar 主题颜色与element ui(全局)同步</li>
-                <li>
-                  修复dict_sort不可update为0的问题&查询返回增加dict_sort升序排序
-                </li>
+                <li>修复dict_sort不可update为0的问题&查询返回增加dict_sort升序排序</li>
                 <li>权限部分代码调整</li>
                 <li>其他细节优化</li>
               </ol>
@@ -734,7 +889,7 @@
           </div>
           <div class="body">
             <img
-              src="https://oscimg.oschina.net/oscnet/up-d6695f82666e5018f715c41cb7ee60d3b73.png"
+              src="@/assets/images/pay.png"
               alt="donate"
               width="100%"
             />
@@ -754,7 +909,7 @@ export default {
   data() {
     return {
       // 版本号
-      version: "3.6.0",
+      version: "3.6.5",
     };
   },
   methods: {

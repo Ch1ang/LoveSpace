@@ -135,9 +135,7 @@
             v-hasPermi="['system:role:remove']"
           >删除</el-button>
           <el-dropdown size="mini" @command="(command) => handleCommand(command, scope.row)" v-hasPermi="['system:role:edit']">
-            <span class="el-dropdown-link">
-              <i class="el-icon-d-arrow-right el-icon--right"></i>更多
-            </span>
+            <el-button size="mini" type="text" icon="el-icon-d-arrow-right">更多</el-button>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="handleDataScope" icon="el-icon-circle-check"
                 v-hasPermi="['system:role:edit']">数据权限</el-dropdown-item>
@@ -524,8 +522,8 @@ export default {
             })
           });
         });
-        this.title = "修改角色";
       });
+      this.title = "修改角色";
     },
     /** 选择角色权限范围触发 */
     dataScopeSelectChange(value) {
@@ -545,8 +543,8 @@ export default {
             this.$refs.dept.setCheckedKeys(res.checkedKeys);
           });
         });
-        this.title = "分配数据权限";
       });
+      this.title = "分配数据权限";
     },
     /** 分配用户操作 */
     handleAuthUser: function(row) {

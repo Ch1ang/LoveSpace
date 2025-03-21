@@ -2,6 +2,7 @@ package com.ruoyi.common.core.text;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.text.NumberFormat;
@@ -313,7 +314,7 @@ public class Convert
      * 转换为Integer数组<br>
      * 
      * @param split 分隔符
-     * @param split 被转换的值
+     * @param str 被转换的值
      * @return 结果
      */
     public static Integer[] toIntArray(String split, String str)
@@ -363,6 +364,10 @@ public class Convert
      */
     public static String[] toStrArray(String str)
     {
+        if (StringUtils.isEmpty(str))
+        {
+            return new String[] {};
+        }
         return toStrArray(",", str);
     }
 
@@ -370,7 +375,7 @@ public class Convert
      * 转换为String数组<br>
      * 
      * @param split 分隔符
-     * @param split 被转换的值
+     * @param str 被转换的值
      * @return 结果
      */
     public static String[] toStrArray(String split, String str)
@@ -535,9 +540,9 @@ public class Convert
 
     /**
      * 转换为boolean<br>
-     * String支持的值为：true、false、yes、ok、no，1,0 如果给定的值为空，或者转换失败，返回默认值<br>
+     * String支持的值为：true、false、yes、ok、no、1、0、是、否, 如果给定的值为空，或者转换失败，返回默认值<br>
      * 转换失败不会报错
-     * 
+     *
      * @param value 被转换的值
      * @param defaultValue 转换错误时的默认值
      * @return 结果
@@ -564,10 +569,12 @@ public class Convert
             case "yes":
             case "ok":
             case "1":
+            case "是":
                 return true;
             case "false":
             case "no":
             case "0":
+            case "否":
                 return false;
             default:
                 return defaultValue;
@@ -712,7 +719,7 @@ public class Convert
         }
         if (value instanceof Double)
         {
-            return new BigDecimal((Double) value);
+            return BigDecimal.valueOf((Double) value);
         }
         if (value instanceof Integer)
         {
@@ -962,9 +969,7 @@ public class Convert
                 c[i] = (char) (c[i] - 65248);
             }
         }
-        String returnString = new String(c);
-
-        return returnString;
+        return new String(c);
     }
 
     /**
@@ -985,7 +990,12 @@ public class Convert
         String s = "";
         for (int i = 0; i < fraction.length; i++)
         {
-            s += (digit[(int) (Math.floor(n * 10 * Math.pow(10, i)) % 10)] + fraction[i]).replaceAll("(零.)+", "");
+            // 优化double计算精度丢失问题
+            BigDecimal nNum = new BigDecimal(n);
+            BigDecimal decimal = new BigDecimal(10);
+            BigDecimal scale = nNum.multiply(decimal).setScale(2, RoundingMode.HALF_EVEN);
+            double d = scale.doubleValue();
+            s += (digit[(int) (Math.floor(d * Math.pow(10, i)) % 10)] + fraction[i]).replaceAll("(零.)+", "");
         }
         if (s.length() < 1)
         {

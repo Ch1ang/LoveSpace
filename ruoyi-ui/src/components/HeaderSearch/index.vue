@@ -22,6 +22,7 @@
 // make search results more in line with expectations
 import Fuse from 'fuse.js/dist/fuse.min.js'
 import path from 'path'
+import { isHttp } from '@/utils/validate'
 
 export default {
   name: 'HeaderSearch',
@@ -36,7 +37,7 @@ export default {
   },
   computed: {
     routes() {
-      return this.$store.getters.permission_routes
+      return this.$store.getters.defaultRoutes
     }
   },
   watch: {
@@ -71,12 +72,17 @@ export default {
     },
     change(val) {
       const path = val.path;
-      if(this.ishttp(val.path)) {
+      const query = val.query;
+      if(isHttp(val.path)) {
         // http(s):// 路径新窗口打开
         const pindex = path.indexOf("http");
         window.open(path.substr(pindex, path.length), "_blank");
       } else {
-        this.$router.push(val.path)
+        if (query) {
+          this.$router.push({ path: path, query: JSON.parse(query) });
+        } else {
+          this.$router.push(path)
+        }
       }
       this.search = ''
       this.options = []
@@ -90,7 +96,6 @@ export default {
         threshold: 0.4,
         location: 0,
         distance: 100,
-        maxPatternLength: 32,
         minMatchCharLength: 1,
         keys: [{
           name: 'title',
@@ -111,7 +116,7 @@ export default {
         if (router.hidden) { continue }
 
         const data = {
-          path: !this.ishttp(router.path) ? path.resolve(basePath, router.path) : router.path,
+          path: !isHttp(router.path) ? path.resolve(basePath, router.path) : router.path,
           title: [...prefixTitle]
         }
 
@@ -123,6 +128,10 @@ export default {
             // special case: need to exclude parent router without redirect
             res.push(data)
           }
+        }
+
+        if (router.query) {
+          data.query = router.query
         }
 
         // recursive child routes
@@ -141,9 +150,6 @@ export default {
       } else {
         this.options = []
       }
-    },
-    ishttp(url) {
-      return url.indexOf('http://') !== -1 || url.indexOf('https://') !== -1
     }
   }
 }
